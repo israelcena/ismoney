@@ -1,4 +1,4 @@
-import { GlobalStyle } from "./assets/global";
+import { GlobalStyle } from "./styles/global";
 
 export function App() {
 	return (

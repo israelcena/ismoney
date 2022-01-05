@@ -35,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased; /* for fonts show more details */
 }
 
-:-ms-input-placeholder, input, textarea, button {
+input, textarea, button {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }

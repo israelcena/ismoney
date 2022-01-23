@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiUpArrowAlt } from "react-icons/bi";
@@ -8,6 +8,7 @@ import {
 	TransactionTypeContainer,
 	TransactionTypeButton,
 } from "./styles";
+import { on } from "stream";
 
 Modal.setAppElement("#root");
 
@@ -20,8 +21,22 @@ export function TransactionsModal({
 	isOpen,
 	onRequestClose,
 }: TransactionsModalProps) {
+	const [title, setTitle] = useState("");
+	const [value, setValue] = useState(0);
+	const [category, setCategory] = useState("");
 	const [transactionType, setTransactionType] = useState("deposit");
 
+	function handleCreateNewTransaction(e: FormEvent) {
+		e.preventDefault();
+		onRequestClose();
+		const newTransaction = {
+			title,
+			value,
+			category,
+			transactionType,
+		};
+		return console.log(newTransaction);
+	}
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -29,11 +44,25 @@ export function TransactionsModal({
 			overlayClassName="react-modal-overlay"
 			className="react-modal-content"
 		>
-			<Container>
+			<Container onSubmit={handleCreateNewTransaction}>
 				<AiOutlineClose onClick={onRequestClose} className="closeButton" />
 				<h2>Cadastrar Transação</h2>
-				<input type="text" name="title" id="title" placeholder="Titulo" />
-				<input type="number" name="value" id="value" placeholder="Valor" />
+				<input
+					type="text"
+					name="title"
+					id="title"
+					placeholder="Titulo"
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+				/>
+				<input
+					type="number"
+					name="value"
+					id="value"
+					placeholder="Valor"
+					value={value}
+					onChange={(e) => setValue(Number(e.target.value))}
+				/>
 
 				<TransactionTypeContainer>
 					<TransactionTypeButton
@@ -60,6 +89,8 @@ export function TransactionsModal({
 					name="category"
 					id="category"
 					placeholder="Categoria"
+					value={category}
+					onChange={(e) => setCategory(e.target.value)}
 				/>
 				<button type="submit">Cadastrar</button>
 			</Container>

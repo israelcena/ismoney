@@ -40,6 +40,7 @@ export function TransactionsModal({
 						type="button"
 						onClick={() => setTransactionType("deposit")}
 						isActive={transactionType === "deposit"}
+						activeColor="green"
 					>
 						<BiUpArrowAlt size={30} id="arrowUp" />
 						<span>Entrada</span>
@@ -48,6 +49,7 @@ export function TransactionsModal({
 						type="button"
 						onClick={() => setTransactionType("withdraw")}
 						isActive={transactionType === "withdraw"}
+						activeColor="red"
 					>
 						<BiDownArrowAlt size={30} id="arrowDown" />
 						<span>Saída</span>

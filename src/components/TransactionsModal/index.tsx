@@ -1,4 +1,6 @@
 import Modal from "react-modal";
+import { AiOutlineClose } from "react-icons/ai";
+import { Container } from "./styles";
 
 Modal.setAppElement("#root");
 
@@ -12,11 +14,25 @@ export function TransactionsModal({
 	onRequestClose,
 }: TransactionsModalProps) {
 	return (
-		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<h1>Nova Transação</h1>
-			<button type="button" onClick={onRequestClose}>
-				Fechar
-			</button>
+		<Modal
+			isOpen={isOpen}
+			onRequestClose={onRequestClose}
+			overlayClassName="react-modal-overlay"
+			className="react-modal-content"
+		>
+			<Container>
+				<AiOutlineClose onClick={onRequestClose} className="closeButton" />
+				<h2>Cadastrar Transação</h2>
+				<input type="text" name="title" id="title" placeholder="Titulo" />
+				<input type="number" name="value" id="value" placeholder="Valor" />
+				<input
+					type="text"
+					name="category"
+					id="category"
+					placeholder="Categoria"
+				/>
+				<button type="submit">Cadastrar</button>
+			</Container>
 		</Modal>
 	);
 }

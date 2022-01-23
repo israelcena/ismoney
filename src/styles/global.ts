@@ -54,4 +54,41 @@ button {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary);
+  cursor: pointer;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+} 
+
+.react-modal-overlay{
+  background: rgba(0,0,0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-content {
+  width: 100%;
+  max-width: 576px;
+  background: var(--background);
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.24rem;
+}
 `

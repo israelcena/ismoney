@@ -8,7 +8,7 @@ import {
 	TransactionTypeContainer,
 	TransactionTypeButton,
 } from "./styles";
-import { on } from "stream";
+import { api } from "../../services/api";
 
 Modal.setAppElement("#root");
 
@@ -35,7 +35,8 @@ export function TransactionsModal({
 			category,
 			transactionType,
 		};
-		return console.log(newTransaction);
+
+		api.post("transactions", newTransaction);
 	}
 	return (
 		<Modal

@@ -13,7 +13,7 @@ createServer({
 					id: 1,
 					title: "Lorem ipsum dolor sit amet",
 					amount: "R$ 100,00",
-					type: "income",
+					type: "deposit",
 					category: "Salary",
 					createdAt: new Date(),
 				},

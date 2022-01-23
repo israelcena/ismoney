@@ -1,6 +1,8 @@
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
-import { Container } from "./styles";
+import { BiUpArrowAlt } from "react-icons/bi";
+import { BiDownArrowAlt } from "react-icons/bi";
+import { Container, TransactionTypeContainer } from "./styles";
 
 Modal.setAppElement("#root");
 
@@ -25,6 +27,17 @@ export function TransactionsModal({
 				<h2>Cadastrar Transação</h2>
 				<input type="text" name="title" id="title" placeholder="Titulo" />
 				<input type="number" name="value" id="value" placeholder="Valor" />
+
+				<TransactionTypeContainer>
+					<button type="button">
+						<BiUpArrowAlt size={30} id="arrowUp" />
+						<span>Entrada</span>
+					</button>
+					<button type="button">
+						<BiDownArrowAlt size={30} id="arrowDown" />
+						<span>Saída</span>
+					</button>
+				</TransactionTypeContainer>
 				<input
 					type="text"
 					name="category"

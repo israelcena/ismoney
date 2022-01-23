@@ -9,7 +9,7 @@ export function Summary() {
 			<div>
 				<header>
 					<p>Entradas</p>
-					<BiUpArrowAlt size={30} id="up" />
+					<BiUpArrowAlt size={30} id="arrowUp" />
 				</header>
 				<strong>R$ 1000,00</strong>
 			</div>
@@ -17,7 +17,7 @@ export function Summary() {
 			<div>
 				<header>
 					<p>Saídas</p>
-					<BiDownArrowAlt size={30} id="down" />
+					<BiDownArrowAlt size={30} id="arrowDown" />
 				</header>
 				<strong>R$ -500,00</strong>
 			</div>

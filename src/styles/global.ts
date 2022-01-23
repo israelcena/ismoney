@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
   cursor: pointer;
+  border: none;
+   &:active {
+      transform: translateY(0.1rem);
+    }
 }
 
 [disabled] {
@@ -66,9 +70,25 @@ button {
   transition: filter 0.2s;
 
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(85%);
   }
+
+  &:active {
+      transform: translateY(0.1rem);
+    }
 } 
+
+#arrowUp {
+    color: limegreen;
+    border: limegreen solid 0.150rem;
+    border-radius: 50%;
+}
+
+#arrowDown{
+ color: orangered;
+    border: orangered solid 0.150rem;
+    border-radius: 50%;
+}
 
 .react-modal-overlay{
   background: rgba(0,0,0, 0.5);
@@ -77,7 +97,6 @@ button {
   bottom: 0;
   right: 0;
   left: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;

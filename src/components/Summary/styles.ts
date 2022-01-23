@@ -16,18 +16,6 @@ div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  #up {
-    color: limegreen;
-    border: limegreen solid 0.150rem;
-    border-radius: 50%;
-  }
-
-  #down {
-    color: orangered;
-    border: orangered solid 0.150rem;
-    border-radius: 50%;
-  }
 }
 
   strong {

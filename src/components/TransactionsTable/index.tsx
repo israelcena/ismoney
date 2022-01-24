@@ -6,7 +6,7 @@ interface Transaction {
 	id: number;
 	title: string;
 	type: string;
-	amount: Number;
+	amount: number;
 	category: string;
 	createdAt: string;
 }
@@ -36,11 +36,18 @@ export default function TransactionsTable() {
 						<tr key={transaction.id}>
 							<td className="title">{transaction.title}</td>
 							<td className={transaction.type}>
-								{transaction.type === "deposit" ? "" : "-"}R${" "}
-								{transaction.amount}
+								{transaction.type === "deposit" ? "" : "-"}
+								{new Intl.NumberFormat("pt-BR", {
+									style: "currency",
+									currency: "BRL",
+								}).format(transaction.amount)}
 							</td>
 							<td>{transaction.category}</td>
-							<td>{transaction.createdAt}</td>
+							<td>
+								{new Intl.DateTimeFormat("pt-BR").format(
+									new Date(transaction.createdAt)
+								)}
+							</td>
 						</tr>
 					))}
 				</tbody>

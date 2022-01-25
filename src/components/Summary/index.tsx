@@ -2,8 +2,12 @@ import { Container } from "./styles";
 import { BiUpArrowAlt } from "react-icons/bi";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { useContext } from "react";
+import { TransactionsContext } from "../Context/TransactionsContext";
 
 export function Summary() {
+	const transactions = useContext(TransactionsContext);
+	console.log(transactions);
 	return (
 		<Container>
 			<div>

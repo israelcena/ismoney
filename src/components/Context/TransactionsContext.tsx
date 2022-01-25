@@ -1,4 +1,4 @@
-import { Children, createContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 import { api } from "../../services/api";
 
 export const TransactionsContext = createContext<TransactionProps[]>([]);

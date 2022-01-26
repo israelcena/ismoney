@@ -37,6 +37,10 @@ export function TransactionsModal({
 			category,
 			type: transactionType,
 		});
+		setTitle("");
+		setValue(0);
+		setCategory("");
+		setTransactionType("deposit");
 		onRequestClose();
 	}
 

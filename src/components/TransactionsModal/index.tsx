@@ -8,7 +8,6 @@ import {
 	TransactionTypeContainer,
 	TransactionTypeButton,
 } from "./styles";
-import { api } from "../../services/api";
 import { TransactionsContext } from "../Context/TransactionsContext";
 
 Modal.setAppElement("#root");

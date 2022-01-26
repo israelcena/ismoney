@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useContext } from "react";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiUpArrowAlt } from "react-icons/bi";
@@ -9,6 +9,7 @@ import {
 	TransactionTypeButton,
 } from "./styles";
 import { api } from "../../services/api";
+import { TransactionsContext } from "../Context/TransactionsContext";
 
 Modal.setAppElement("#root");
 
@@ -21,6 +22,8 @@ export function TransactionsModal({
 	isOpen,
 	onRequestClose,
 }: TransactionsModalProps) {
+	const { createTransaction } = useContext(TransactionsContext);
+
 	const [title, setTitle] = useState("");
 	const [value, setValue] = useState(0);
 	const [category, setCategory] = useState("");
@@ -28,16 +31,15 @@ export function TransactionsModal({
 
 	function handleCreateNewTransaction(e: FormEvent) {
 		e.preventDefault();
-		onRequestClose();
-		const newTransaction = {
+		createTransaction({
 			title,
-			value,
+			amount: value,
 			category,
-			transactionType,
-		};
-
-		api.post("transactions", newTransaction);
+			type: transactionType,
+		});
+		onRequestClose();
 	}
+
 	return (
 		<Modal
 			isOpen={isOpen}

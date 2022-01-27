@@ -26,7 +26,6 @@ export function Summary() {
 			total: 0,
 		}
 	);
-	console.log(summary);
 	return (
 		<Container>
 			<div>

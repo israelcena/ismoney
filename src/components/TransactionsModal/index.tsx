@@ -57,7 +57,7 @@ export function TransactionsModal({
 					type="text"
 					name="title"
 					id="title"
-					placeholder="Titulo"
+					placeholder="Nome da Transação"
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 				/>
@@ -67,7 +67,6 @@ export function TransactionsModal({
 					step="any"
 					name="amount"
 					id="amount"
-					placeholder="Valor"
 					value={amount}
 					onChange={(e) => setAmount(Number(e.target.value))}
 				/>

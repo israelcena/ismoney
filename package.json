@@ -2,6 +2,7 @@
   "name": "ismoney",
   "version": "0.1.0",
   "private": false,
+  "license": "MIT",
   "dependencies": {
     "@types/react-modal": "^3.13.1",
     "axios": "^0.24.0",
